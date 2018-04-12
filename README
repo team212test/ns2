@@ -1,0 +1,33 @@
+The two files collectively help in creating a multi-client, single server chat application.
+
+The program runs on python version 2.7
+The libraries required are the basic libraries that come with the version. To enlist them: sys, argparse, os, threading, socket, pickle
+The program can be run on the basic terminal of an OS that has python installed. To run a server or each new client, open a different terminal window.
+
+The steps to run the application are:
+
+First run the ChatServer.py file while giving the port to which the server is to be connected as input.
+
+Ex: python ChatServer.py -sp 9090
+
+After the server is up and running, run the ChatClient.py file while giving three parameters as input to sign-in:
+
+Ex: python ChatClient.py -u Alice -sip server-ip -sp 9090
+
+Where,
+-u is the Username of client
+-sip is the IP address of the server the client wishes to connect.
+-sp is the port number of the server.
+
+The chat application can recognize two kinds of commands on the client’s end. They are:
+1. list – lists the names of all the clients connected to the server currently.
+Ex: list  
+<– Signed In Users: Bob, Carole
+2. send – sends the message from the current client to the client whose name is given as input along with the message.
+Ex: send Carole Hello this is Alice.
+
+
+The client will receive messages from another client in this format:
+<– <From IP:PORT:Carole>: Hi Alice! How are you
+
+
